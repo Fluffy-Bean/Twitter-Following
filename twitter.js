@@ -3,9 +3,10 @@
 // @version      0.1
 // @description  Fuck you twitter
 // @author       Fluffy Bean
-// @match        *://*twitter.com/home*
-// @require  http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
-// @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
+// @match        *twitter.com/home*
+// @match        *twitter.com*
+// @require      http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
+// @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @grant        none
 // ==/UserScript==
 function clickTab (jNode) {

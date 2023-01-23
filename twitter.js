@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Following Tab
-// @version      0.1
+// @version      0.69
 // @description  Fuck you twitter
 // @author       Fluffy Bean
 // @match        *twitter.com/home*
@@ -18,21 +18,23 @@ function clickTab (jNode) {
             var tab = jNode[0].childNodes[1].childNodes[0];
 
             // DEBUG
-            //console.log(tab.ariaSelected, tab.href, tab.tabIndex);
+            //console.log('Tab aria:',tab.ariaSelected);
+            //console.log('Tab href:',tab.href);
+            //console.log('Tab index:',tab.tabIndex);
 
             // BUG: Clicks tabs of profile, following, etc...
             // AND check if its not already selected, otherwise yeets to top of page
             if (tab.href == 'https://twitter.com/home' || tab.href == '/home') {
                 if (tab.ariaSelected == 'false' || tab.tabIndex == '-1') {
                     tab.click();
-                    console.log("Switched to Following!");
+                    console.log("Switched to Following! Woop!");
                 } else {
-                    console.log("Already selected");
+                    console.log("Already selected!");
                 }
             } else {
                 console.log("Not home tab");
             };
-        }, 500);
+        }, 621);
     } catch (error) {
         // ono, error occured!
         console.log("Error!!!!!!", error);

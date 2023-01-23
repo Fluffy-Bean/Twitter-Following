@@ -18,15 +18,19 @@ function clickTab (jNode) {
             var tab = jNode[0].childNodes[1].childNodes[0];
 
             // DEBUG
-            //console.log(tab.ariaSelected, tab.href);
+            //console.log(tab.ariaSelected, tab.href, tab.tabIndex);
 
             // BUG: Clicks tabs of profile, following, etc...
             // AND check if its not already selected, otherwise yeets to top of page
-            if ((tab.href == 'https://twitter.com/home' || tab.href == '/home') && (tab.ariaSelected != 'true')) {
-                tab.click();
-                console.log("Switched to Following!");
-            //} else {
-            //    console.log("Not home tab");
+            if (tab.href == 'https://twitter.com/home' || tab.href == '/home') {
+                if (tab.ariaSelected == 'false' || tab.tabIndex == '-1') {
+                    tab.click();
+                    console.log("Switched to Following!");
+                } else {
+                    console.log("Already selected");
+                }
+            } else {
+                console.log("Not home tab");
             };
         }, 500);
     } catch (error) {
